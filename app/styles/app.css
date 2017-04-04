@@ -1,0 +1,15 @@
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+.reminders-div {
+  border-right: 2px solid black;
+  color: slategray;
+  padding: 20px;
+  width: 25%
+
+}
+
+.active {
+  width: 60%
+}
