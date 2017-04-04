@@ -7,9 +7,12 @@ body {
   color: slategray;
   padding: 20px;
   width: 25%
+}
 
+.active-div {
+  width: 60%
 }
 
 .active {
-  width: 60%
+  color: red;
 }
