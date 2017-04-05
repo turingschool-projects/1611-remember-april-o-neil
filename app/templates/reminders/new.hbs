@@ -1,0 +1,6 @@
+<div class='add-new-reminder'>
+  {{input type='text' value=newTitle placeholder='Enter a title'}}
+  {{input type='text' value=newBody placeholder='Enter a body'}}
+  {{input type='date' value=newDate placeholder='Enter a date'}}
+  <button class='submit-button' {{action "select" model}}>Submit new reminder</button/>
+</div>
