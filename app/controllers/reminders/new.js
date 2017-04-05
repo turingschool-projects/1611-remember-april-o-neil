@@ -13,9 +13,9 @@ export default Ember.Controller.extend({
         date,
       })
 
-      this.set('newTitle', '')
-      this.set('newBody', '')
-      this.set('newDate', '')
+      this.set('newTitle', '');
+      this.set('newBody', '');
+      this.set('newDate', '');
 
       reminder.save();
     }
