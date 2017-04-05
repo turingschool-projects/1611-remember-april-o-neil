@@ -1,22 +1,22 @@
 <h1>remEMBER APRIL O'NEIL RULES!</h1>
 {{#if model}}
-<div class='reminders-div'>
-  {{#each model as |reminder|}}
-    {{#link-to 'reminders.reminder' reminder class="reminder-item"}}
-      <h3>{{reminder.title}}</h3>
-    {{/link-to}}
-  {{/each}}
-</div>
-{{#link-to 'reminders.new' class='new-button'}}
-<button>Create New Reminder</button>
-{{/link-to}}
+  <div class='reminders-div'>
+    {{#each model as |reminder|}}
+      {{#link-to 'reminders.reminder' reminder class="reminder-item"}}
+        <h3>{{reminder.title}}</h3>
+      {{/link-to}}
+    {{/each}}
+  </div>
+  {{#link-to 'reminders.new' class='new-button'}}
+  <button>Create New Reminder</button>
+  {{/link-to}}
 {{else}}
-<div>
-<p class="no-reminders">You have no reminders! :-(((</p>
-{{#link-to 'reminders.new' class='new-button'}}
-<button>Create One Here</button>
-{{/link-to}}
-</div>
+  <div>
+  <p class="no-reminders">You have no reminders! :-(((</p>
+  {{#link-to 'reminders.new' class='new-button'}}
+  <button>Create One Here</button>
+  {{/link-to}}
+  </div>
 {{/if}}
 
 {{outlet}}
