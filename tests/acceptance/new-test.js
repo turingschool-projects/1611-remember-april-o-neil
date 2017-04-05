@@ -7,16 +7,6 @@ import Ember from 'ember';
 
 moduleForAcceptance('Acceptance | new');
 
-test('visiting /new', function(assert) {
-  server.createList('reminder', 5);
-
-  visit('reminders/new');
-
-  andThen(function() {
-    assert.equal(currentURL(), 'reminders/new');
-  });
-});
-
 test('redirects to new on click', function(assert) {
   server.createList('reminder', 5);
 
@@ -25,6 +15,7 @@ test('redirects to new on click', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/reminders/new');
+    assert.equal(Ember.$('.reminder-item').length, 5);
   });
 });
 
@@ -33,6 +24,9 @@ test('adding a new reminder', function(assert) {
 
   visit('reminders/new');
   fillIn('input:first', 'My new post');
+  andThen(function() {
+    assert.equal(Ember.$('.reminder-item').length, 5);
+  });
   click('.submit-button');
 
   andThen(function() {
