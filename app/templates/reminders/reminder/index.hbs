@@ -1,0 +1,9 @@
+<div class="active-div">
+  <h2 class='active-title'>{{model.title}}</h2>
+  <p class="active-body">{{model.body}}</p>
+  <p class="active-date">{{model.date}}</p>
+  {{#link-to 'reminders.reminder.edit'}}
+    <button class="edit-button">Edit</button>
+  {{/link-to}}
+  <button class="delete-button" {{action 'delete' model}}>Delete</button>
+</div>
