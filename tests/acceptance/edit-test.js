@@ -30,29 +30,18 @@ test('redirects to reminder when save is clicked', function(assert) {
 });
 
 test('edits title of reminder', function(assert) {
-  server.createList('reminder', 0);
+  server.createList('reminder', 1);
 
-  visit('/reminders/new');
-  fillIn('input:first', 'My');
-  click('.submit-button');
-
-  andThen(function() {
-    assert.equal(Ember.$('.reminder-item').length, 1);
-  });
-
-  click('.reminder-item:first');
+  visit('/reminders');
+  click('.reminder-item');
   click('.edit-button');
 
-  andThen(function() {
-    assert.equal(currentURL(), '/reminders/1/edit');
-  });
-
-  fillIn('input:first', '').then(function() {
+  fillIn('.title', 'Hey My').then(function() {
     click('.save-button');
   });
 
   andThen(function() {
     assert.equal(currentURL(), '/reminders/1');
-    assert.equal(Ember.$('input:first').text(), '');
+    assert.equal(Ember.$('.active-title').text().trim(), 'Hey My');
   });
 });

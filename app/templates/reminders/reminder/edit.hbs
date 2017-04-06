@@ -1,5 +1,5 @@
 <div class='add-new-reminder'>
-  {{input type='text' value=model.title placeholder='Enter a title'}}
+  {{input class="title" type='text' value=model.title placeholder='Enter a title'}}
   {{input type='text' value=model.body placeholder='Enter a body'}}
   {{input class="date" type='date' value=model.date placeholder='Enter a date'}}
   <button class="save-button" {{action "edit" model}}>Save</button/>
